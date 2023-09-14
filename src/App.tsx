@@ -5,7 +5,7 @@ import {
 
 export default function App() {
   return (
-    <SafeAreaView>
+    <SafeAreaView className='flex-1'>
       <WelcomeScreen/>
     </SafeAreaView>
   );

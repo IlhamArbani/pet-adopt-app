@@ -6,13 +6,14 @@ type Props = {
   onPress: () => void,
   width: string,
   height: string,
+  rounded: string,
 }
 
 const Button = (props: Props) => {
   return (
     <TouchableOpacity
       onPress={props.onPress}
-      className={`bg-primary justify-center items-center rounded-full px-4 ${props.height} ${props.width}`}>
+      className={`bg-primary justify-center items-center px-4 ${props.rounded} ${props.height} ${props.width}`}>
       <Text className='text-white font-bold text-lg'>
         {props.title}
       </Text>
@@ -23,6 +24,7 @@ const Button = (props: Props) => {
 Button.defaultProps = {
   width: 'w-32',
   height: 'h-12',
+  rounded: 'rounded-full'
 }
 
 export default Button

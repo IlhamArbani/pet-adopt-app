@@ -1,4 +1,4 @@
-import MainLogo from './mainLogo.png';
+import MainLogo from './main_logo.png';
 
 export {
   MainLogo,

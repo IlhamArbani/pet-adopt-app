@@ -21,7 +21,7 @@ const LoginScreen = () => {
             <Text className='font-bold text-xl text-sky-400 mb-4'>Please sign in to continue</Text>
             <TextInput label='Email'/>
             <Spacer height={25}/>
-            <TextInput label='Password'/>
+            <TextInput label='Password' type='password'/>
             <View className='flex flex-row justify-between my-5'>
               <BouncyCheckbox
                 size={16}

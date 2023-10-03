@@ -11,7 +11,7 @@ const ForgotPasswordScreen = () => {
   const {height} = Dimensions.get('window');
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <View className='pb-6' style={{height: height - (StatusBar.currentHeight ?? 0)}}>
+      <View className='pb-6 bg-white' style={{height: height - (StatusBar.currentHeight ?? 0)}}>
         <Image source={MainLogoHorizontal}  className='h-10 w-36 m-4 mb-2'/>
         <View className='px-7 flex-1 justify-center'>
           <Text className='text-3xl text-center font-bold'>Forgot Password?</Text>

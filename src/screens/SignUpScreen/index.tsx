@@ -4,13 +4,17 @@ import { MainLogoHorizontal } from '@src/assets/images'
 import { ILCat } from '@src/assets/illustration'
 import { Button, Link, Spacer, TextInput } from '@src/components'
 import { Dimensions } from 'react-native';
+import { ScreenNavigationProp } from '@src/types'
 
+type Props = {
+  navigation: ScreenNavigationProp<'SignUpScreen'>
+}
 
-const SignUpScreen = () => {
+const SignUpScreen = (props: Props) => {
   const {height} = Dimensions.get('window');
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={{height: height - (StatusBar.currentHeight ?? 0)}}>
+      <View style={{height: height - (StatusBar.currentHeight ?? 0)}} className='bg-white'>
         <Image source={MainLogoHorizontal}  className='h-10 w-36 m-4 mb-2'/>
         <View className='flex items-center'>
           <Image source={ILCat} className='w-36 h-36'/>
@@ -29,7 +33,7 @@ const SignUpScreen = () => {
           </View>
           <View className='flex flex-row justify-center'>
             <Text className='text-gray-primary mr-1'>Already have an account?</Text>
-            <Link textStyle='font-bold' text='Sign In' onPress={() => {}}/>
+            <Link textStyle='font-bold' text='Sign In' onPress={() => props.navigation.replace('SignInScreen')}/>
           </View>
         </View>
       </View>

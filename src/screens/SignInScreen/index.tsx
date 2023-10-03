@@ -5,12 +5,17 @@ import { ILCat } from '@src/assets/illustration'
 import { Button, Link, Spacer, TextInput } from '@src/components'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import { Dimensions } from 'react-native';
+import { ScreenNavigationProp } from '@src/types'
 
-const SignInScreen = () => {
+type Props = {
+  navigation: ScreenNavigationProp<'SignInScreen'>
+}
+
+const SignInScreen = (props: Props) => {
   const {height} = Dimensions.get('window');
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={{height: height - (StatusBar.currentHeight ?? 0)}}>
+      <View style={{height: height - (StatusBar.currentHeight ?? 0)}} className='bg-white'>
         <Image source={MainLogoHorizontal}  className='h-10 w-36 m-4 mb-2'/>
         <View className='flex items-center'>
           <Image source={ILCat} className='w-36 h-36'/>
@@ -28,13 +33,13 @@ const SignInScreen = () => {
                 text='Remember Me?'
                 textStyle={{fontSize: 14, textDecorationLine: "none"}}
               />
-              <Link onPress={() => {}} text='forgot password' textStyle='text-primary'/>
+              <Link onPress={() => props.navigation.navigate('ForgotPasswordScreen')} text='forgot password' textStyle='text-primary'/>
             </View>
             <Button title='Log In' onPress={() => {}} width='w-full' rounded='rounded-md'/>
           </View>
           <View className='flex flex-row justify-center'>
             <Text className='text-gray-primary mr-1'>Don't have any account?</Text>
-            <Link textStyle='font-bold' text='Sign Up' onPress={() => {}}/>
+            <Link textStyle='font-bold' text='Sign Up' onPress={() => props.navigation.navigate('SignUpScreen')}/>
           </View>
         </View>
       </View>

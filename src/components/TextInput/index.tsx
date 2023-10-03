@@ -36,7 +36,7 @@ const InputPassword = (props: InputProps) => {
       <View className={`border-[1px] rounded-md py-[6px] px-2 flex-row justify-between items-center ${props.isFocus ? 'border-black' : 'border-gray-primary'}`}>
         <Input onFocus={props.onFocus} onBlur={props.onBlur} secureTextEntry={isShow} className='flex-1 mr-2 h-auto'/>
         <TouchableOpacity onPress={() => setIsShow(!isShow)}>
-          <Image source={isShow ? ICShow : ICHidden} className='w-5 h-5'/>
+          <Image source={isShow ? ICHidden : ICShow} className='w-5 h-5'/>
         </TouchableOpacity>
       </View>
     </View>

@@ -1,17 +1,17 @@
 import { View, Text, Image, ScrollView , StatusBar} from 'react-native'
 import React from 'react'
-import { MainLogo } from '@src/assets/images'
+import { MainLogoHorizontal } from '@src/assets/images'
 import { ILCat } from '@src/assets/illustration'
 import { Button, Link, Spacer, TextInput } from '@src/components'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import { Dimensions } from 'react-native';
 
-const LoginScreen = () => {
+const SignInScreen = () => {
   const {height} = Dimensions.get('window');
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={{height: height - (StatusBar.currentHeight ?? 0)}}>
-        <Image source={MainLogo}  className='h-24 w-24'/>
+        <Image source={MainLogoHorizontal}  className='h-10 w-36 m-4 mb-2'/>
         <View className='flex items-center'>
           <Image source={ILCat} className='w-36 h-36'/>
         </View>
@@ -34,7 +34,7 @@ const LoginScreen = () => {
           </View>
           <View className='flex flex-row justify-center'>
             <Text className='text-gray-primary mr-1'>Don't have any account?</Text>
-            <Link textStyle='font-bold' text='Sign In' onPress={() => {}}/>
+            <Link textStyle='font-bold' text='Sign Up' onPress={() => {}}/>
           </View>
         </View>
       </View>
@@ -42,4 +42,4 @@ const LoginScreen = () => {
   )
 }
 
-export default LoginScreen
+export default SignInScreen

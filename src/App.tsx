@@ -1,13 +1,12 @@
-import { WelcomeScreen } from './screens';
 import {
   SafeAreaView,
 } from 'react-native-safe-area-context';
-import LoginScreen from './screens/LoginScreen';
+import SignUpScreen from './screens/SignUpScreen';
 
 export default function App() {
   return (
     <SafeAreaView className='flex-1'>
-      <LoginScreen/>
+      <SignUpScreen/>
     </SafeAreaView>
   );
 }

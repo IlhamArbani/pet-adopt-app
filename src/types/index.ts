@@ -5,6 +5,11 @@ export type RootStackParamList = {
   SignUpScreen: undefined,
   WelcomeScreen: undefined,
   ForgotPasswordScreen: undefined,
+  MainScreen: undefined,
+  HomeScreen: undefined,
+  ExploreScreen: undefined,
+  LikedScreen: undefined,
+  InboxScreen: undefined,
 }
 
 export type ScreenNavigationProp<

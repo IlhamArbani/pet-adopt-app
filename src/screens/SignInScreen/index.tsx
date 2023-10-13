@@ -35,7 +35,7 @@ const SignInScreen = (props: Props) => {
               />
               <Link onPress={() => props.navigation.navigate('ForgotPasswordScreen')} text='forgot password' textStyle='text-primary'/>
             </View>
-            <Button title='Log In' onPress={() => {}} width='w-full' rounded='rounded-md'/>
+            <Button title='Log In' onPress={() => props.navigation.navigate('MainScreen')} width='w-full' rounded='rounded-md'/>
           </View>
           <View className='flex flex-row justify-center'>
             <Text className='text-gray-primary mr-1'>Don't have any account?</Text>

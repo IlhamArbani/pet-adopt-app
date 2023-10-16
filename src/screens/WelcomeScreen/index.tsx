@@ -12,7 +12,7 @@ const WelcomeScreen = (props: Props) => {
   return (
     <View className='flex-1 justify-center items-center pb-4 bg-white'>
       <Slider/>
-      <Button title='Start' onPress={() => props.navigation.replace('SignInScreen')}/>
+      <Button text='Start' onPress={() => props.navigation.replace('SignInScreen')}/>
     </View>
   )
 }

@@ -29,7 +29,7 @@ const SignUpScreen = (props: Props) => {
             <Spacer height={25}/>
             <TextInput label='Password' type='password'/>
             <Spacer height={20}/>
-            <Button title='Sign Up' onPress={() => {}} width='w-full' rounded='rounded-md'/>
+            <Button text='Sign Up' onPress={() => {}} size='full' rounded='rounded-md'/>
           </View>
           <View className='flex flex-row justify-center'>
             <Text className='text-gray-primary mr-1'>Already have an account?</Text>

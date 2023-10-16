@@ -21,7 +21,7 @@ const ForgotPasswordScreen = () => {
           <Text className='text-center mb-6'>Enter your email addres here to receive further instructions.</Text>
           <TextInput placeholder='Type your email addres' label='Email'/>
           <Spacer height={24}/>
-          <Button title='Send' onPress={() => {}} rounded='rounded-md' width='w-full'/>
+          <Button text='Send' onPress={() => {}} rounded='rounded-md' size='full'/>
         </View>
         <Text className='text-center text-gray-primary'>Pet Adoption App By codecraft</Text>
       </View>

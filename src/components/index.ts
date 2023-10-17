@@ -4,6 +4,8 @@ import Spacer from "./Spacer";
 import Link from "./Link";
 import BottomTab from "./BottomTab";
 import Header from "./Header";
+import ButtonIcon from "./ButtonIcon";
+import PetCard from './PetCard';
 
 export {
   Button,
@@ -11,5 +13,7 @@ export {
   Spacer,
   Link,
   BottomTab,
-  Header
+  Header,
+  ButtonIcon,
+  PetCard,
 }

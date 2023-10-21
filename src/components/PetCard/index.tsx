@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ImageProps, Image } from 'react-native'
 import React, {useState} from 'react'
 import { ICLocation, ICLove } from '@src/assets/icons'
 
@@ -6,7 +6,8 @@ type Props = {
   name: string
   age: string
   gender: string
-  distance: number
+  distance: number,
+  image: ImageProps,
 }
 
 const PetCard = (props: Props) => {
@@ -18,7 +19,7 @@ const PetCard = (props: Props) => {
         className='bg-white items-center justify-center rounded-full w-9 h-9 border-gray-secondary border-[1px] absolute z-50 left-[58px] -top-4'>
         <ICLove fill={isLoved ? '#FB003B' : '#DBDBDB'}/>
       </TouchableOpacity>
-      <View className='w-[137px] h-[114px] bg-gray-primary mb-3 rounded-xl'></View>
+      <Image source={props.image} className='w-[137px] h-[114px] mb-3 rounded-xl'/>
       <View className='flex-row justify-between'>
         <Text className='text-primary text-lg font-bold'>{props.name}</Text>
         <View className='flex-row items-center'>

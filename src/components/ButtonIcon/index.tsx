@@ -9,7 +9,7 @@ type Props = {
 const ButtonIcon = (props: Props) => {
   return (
     <View>
-      <View className='w-20 h-[74px] shadow-lg shadow-black rounded-lg bg-white items-center justify-center'>
+      <View className='w-[75px] h-[74px] shadow-lg shadow-black rounded-lg bg-white items-center justify-center'>
         <Image source={props.icon}/>
       </View>
       {

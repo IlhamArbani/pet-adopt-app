@@ -39,7 +39,7 @@ const HomeScreen = () => {
           {
             PETS.map((pet) => (
               <View key={pet.id}>
-                <PetCard name={pet.name} age={pet.age} distance={pet.distance} gender={pet.gender}/>
+                <PetCard image={pet.image} name={pet.name} age={pet.age} distance={pet.distance} gender={pet.gender}/>
               </View>
             ))
           }

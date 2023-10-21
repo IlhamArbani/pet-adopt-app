@@ -20,11 +20,11 @@ const MainScreen = () => {
 const Navigation = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="MainScreen" component={MainScreen} options={{headerShown: false}}/>
       <Stack.Screen name='WelcomeScreen' component={WelcomeScreen} options={{headerShown: false}}/>
       <Stack.Screen name="SignInScreen" component={SignInScreen} options={{headerShown: false}}/>
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} options={{headerShown: false}}/>
       <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="MainScreen" component={MainScreen} options={{headerShown: false}}/>
     </Stack.Navigator>
   )
 }

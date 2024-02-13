@@ -1,10 +1,9 @@
-import { View, Text, Image, ScrollView , StatusBar} from 'react-native'
+import { View, Text, Image} from 'react-native'
 import React from 'react'
 import { MainLogoHorizontal } from '@src/assets/images'
 import { ILCat } from '@src/assets/illustration'
 import { Button, Link, Spacer, TextInput } from '@src/components'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
-import { Dimensions } from 'react-native';
 import { ScreenNavigationProp } from '@src/types'
 
 type Props = {
@@ -12,10 +11,8 @@ type Props = {
 }
 
 const SignInScreen = (props: Props) => {
-  const {height} = Dimensions.get('window');
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={{height: height - (StatusBar.currentHeight ?? 0)}} className='bg-white'>
+      <View className='bg-white flex-1'>
         <Image source={MainLogoHorizontal}  className='h-10 w-36 m-4 mb-2'/>
         <View className='flex items-center'>
           <Image source={ILCat} className='w-36 h-36'/>
@@ -43,7 +40,6 @@ const SignInScreen = (props: Props) => {
           </View>
         </View>
       </View>
-    </ScrollView>
   )
 }
 

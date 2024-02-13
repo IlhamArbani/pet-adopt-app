@@ -7,6 +7,7 @@ type Props = {
   type: string;
   placeholder: string;
   icon: any;
+  styleWarper: string;
 }
 
 type InputProps = Props & {
@@ -17,13 +18,13 @@ type InputProps = Props & {
 
 const InputText = (props: InputProps) => {
   return (
-    <View className='flex-1'>
+    <View className={props.styleWarper}>
       <View className='flex items-start'>
         {props.label && <Text className={`-mb-[10px] ml-3 z-40 bg-white font-medium px-1`}>{props.label}</Text>}
       </View>
       <View className={`border-[1px] rounded-md py-[6px] px-2 flex-row items-center ${props.isFocus ? 'border-black' : 'border-gray-primary'}`} style={{columnGap:12}}>
         {props.icon && <props.icon/>}
-        <Input placeholder={props.placeholder}  onFocus={props.onFocus} onBlur={props.onBlur}/>
+        <Input placeholder={props.placeholder}  onFocus={props.onFocus} onBlur={props.onBlur} className='flex-1 h-auto'/>
       </View>
     </View>
   )
@@ -32,7 +33,7 @@ const InputText = (props: InputProps) => {
 const InputPassword = (props: InputProps) => {
   const [isShow, setIsShow] = useState(true);
   return (
-    <View>
+    <View className={props.styleWarper}>
       <View className='flex items-start'>
         {props.label && <Text className={`-mb-[10px] ml-3 z-40 bg-white font-medium px-1`}>{props.label}</Text>}
       </View>
@@ -69,6 +70,7 @@ TextInput.defaultProps = {
   placeholder: '',
   label: '',
   icon: null,
+  styleWarper: ''
 }
 
 export default TextInput

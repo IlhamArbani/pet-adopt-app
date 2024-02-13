@@ -23,6 +23,7 @@ const ExploreScreen = () => {
         <TextInput
           icon={ICSearch}
           placeholder='Search pets'
+          styleWarper='flex-1'
         />
         <TouchableOpacity>
           <ICFilter/>

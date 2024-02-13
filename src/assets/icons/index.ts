@@ -12,6 +12,9 @@ import ICDog from './ic_dog.png';
 import ICBunny from './ic_bunny.png';
 import ICLocation from './ic_location.svg';
 import ICLove from './ic_love.svg';
+import ICSearch from './ic_search.svg';
+import ICFilter from './ic_filter.svg';
+import ICArrowDown from './ic_arrow_down.svg';
 
 export {
   ICHidden,
@@ -28,4 +31,7 @@ export {
   ICArrowLeft,
   ICLocation,
   ICLove,
+  ICSearch,
+  ICFilter,
+  ICArrowDown,
 }

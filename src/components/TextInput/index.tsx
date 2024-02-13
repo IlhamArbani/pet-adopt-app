@@ -6,6 +6,7 @@ type Props = {
   label: string;
   type: string;
   placeholder: string;
+  icon: any;
 }
 
 type InputProps = Props & {
@@ -16,11 +17,12 @@ type InputProps = Props & {
 
 const InputText = (props: InputProps) => {
   return (
-    <View>
+    <View className='flex-1'>
       <View className='flex items-start'>
-        <Text className={`-mb-[10px] ml-3 z-40 bg-white font-medium px-1`}>{props.label}</Text>
+        {props.label && <Text className={`-mb-[10px] ml-3 z-40 bg-white font-medium px-1`}>{props.label}</Text>}
       </View>
-      <View className={`border-[1px] rounded-md py-[6px] px-2 ${props.isFocus ? 'border-black' : 'border-gray-primary'}`}>
+      <View className={`border-[1px] rounded-md py-[6px] px-2 flex-row items-center ${props.isFocus ? 'border-black' : 'border-gray-primary'}`} style={{columnGap:12}}>
+        {props.icon && <props.icon/>}
         <Input placeholder={props.placeholder}  onFocus={props.onFocus} onBlur={props.onBlur}/>
       </View>
     </View>
@@ -32,7 +34,7 @@ const InputPassword = (props: InputProps) => {
   return (
     <View>
       <View className='flex items-start'>
-        <Text className={`-mb-[10px] ml-3 z-40 bg-white font-medium px-1`}>{props.label}</Text>
+        {props.label && <Text className={`-mb-[10px] ml-3 z-40 bg-white font-medium px-1`}>{props.label}</Text>}
       </View>
       <View className={`border-[1px] rounded-md py-[6px] px-2 flex-row justify-between items-center ${props.isFocus ? 'border-black' : 'border-gray-primary'}`}>
         <Input placeholder={props.placeholder} onFocus={props.onFocus} onBlur={props.onBlur} secureTextEntry={isShow} className='flex-1 mr-2 h-auto'/>
@@ -65,6 +67,8 @@ const TextInput = (props: Props) => {
 TextInput.defaultProps = {
   type: 'text',
   placeholder: '',
+  label: '',
+  icon: null,
 }
 
 export default TextInput

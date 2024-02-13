@@ -33,7 +33,7 @@ const Slider = () => {
     <View className='flex-1 items-center justify-center'>
       <FlatList
         data={data}
-        renderItem={({item}) => <SlideItem description={item.description} image={item.image} title={item.title}/>}
+        renderItem={({item}) => <SlideItem id={item.id} description={item.description} image={item.image} title={item.title}/>}
         keyExtractor={item => item.id}
         horizontal
         pagingEnabled

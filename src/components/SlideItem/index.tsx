@@ -5,16 +5,17 @@ type Props = {
   image: ImageSourcePropType | null;
   title: string;
   description: string;
+  id: string | number | null;
 }
 
-const SlideItem = ({image, title, description}: Props) => {
+const SlideItem = ({image, title, description, id}: Props) => {
   const {width} = useWindowDimensions();
   return (
-    <View className='flex-1' style={{width}}>
+    <View className='flex-1 justify-center items-center' style={{width}}>
       {
         image &&
         (
-          <Image className='h-[300px] w-full' source={image}/>
+          <Image className={`${id == 1 ? 'h-[235px]' : 'h-[300px]'} w-full`} source={image}/>
         )
       }
       <View className='px-4'>

@@ -1,11 +1,23 @@
 import { View, Text, FlatList, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useCallback, useMemo, useRef, useState } from 'react'
 import { Spacer, TextInput } from '@src/components'
 import ExploreCard from '@src/components/ExploreCard'
 import { PETS } from '@src/dummyData'
 import { ICArrowDown, ICExplore, ICFilter, ICLocation, ICSearch } from '@src/assets/icons'
+import BottomSheet from '@gorhom/bottom-sheet';
 
 const ExploreScreen = () => {
+  const bottomSheetRef = useRef<BottomSheet>(null);
+
+  const snapPoints = useMemo(() => ['25%', '50%'], []);
+
+  const handleSheetChanges = useCallback((index: number) => {
+    console.log('handleSheetChanges', index);
+  }, []);
+
+  const handleShowFilter = () => {
+    bottomSheetRef.current?.snapToIndex(1)
+  }
   return (
     <View className='pb-[66px] bg-white'>
       <View className='p-4 flex-row justify-between'>
@@ -25,7 +37,9 @@ const ExploreScreen = () => {
           placeholder='Search pets'
           styleWarper='flex-1'
         />
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={handleShowFilter}
+        >
           <ICFilter/>
         </TouchableOpacity>
       </View>
@@ -44,6 +58,19 @@ const ExploreScreen = () => {
         horizontal={false}
         columnWrapperStyle={{gap: 12, justifyContent:'center', marginBottom: 12}}
       />
+      <BottomSheet
+        ref={bottomSheetRef}
+        index={-1}
+        snapPoints={snapPoints}
+        onChange={handleSheetChanges}
+        style={{borderRadius:6, elevation:1}}
+        enablePanDownToClose
+        detached={true}
+      >
+        <View className='flex items-center'>
+          <Text>Awesome 🎉</Text>
+        </View>
+      </BottomSheet>
     </View>
   )
 }
